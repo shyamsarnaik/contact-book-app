@@ -1,0 +1,26 @@
+<h1 mat-dialog-title> {{ title }}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+        <div class="flex-grid">
+            <div class="field-wrapper">
+                <label for="first-name">First Name: </label>
+                <input type="text" formControlName="firstName">
+            </div>
+            <div class="field-wrapper">
+                <label for="last-name">Last Name: </label>
+                <input type="text" formControlName="lastName">
+            </div>
+            <div class="field-wrapper">
+                <label for="last-name">Phone: </label>
+                <input type="number" formControlName="phone" class="margin-left-32">
+            </div>
+            <div class="field-wrapper">
+                <button mat-stroked-button color="default"  matDialogClose>Cancel</button>
+                <button mat-stroked-button color="primary"  type="submit" [disabled]="!contactForm.valid" class="margin-left-15">Save</button>
+            </div>
+        </div>
+
+    </form>
+  
+</div>
